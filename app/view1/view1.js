@@ -13,7 +13,7 @@ angular.module('myApp.view1', ['ngRoute','angular-gcm'])
   $scope.gcmSend = function(sub) {
 
 $scope.sub=sub;
-
+$scope.notif.to=sub.endpoint.replace("https://android.googleapis.com/gcm/send/","");
               // send token to server and save it
             //  $http.post('your_server_url', {"token" : sub.subscriptionId})
 
@@ -22,7 +22,7 @@ $scope.sub=sub;
           $scope.sends=function(notif){
             var data ={
               "message": notif.title,
-              to:'/topics/notify'
+              to:notif.to
 
             }
 
