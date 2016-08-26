@@ -10,7 +10,7 @@ angular.module('myApp.view1', ['ngRoute','angular-gcm'])
 }])
 
 .controller('View1Ctrl', ['$scope','$http',function($scope,$http) {
-  $scope.sub={};
+  $scope.notif={};
   $scope.gcmSend = function(sub) {
 
 $scope.sub=sub;
