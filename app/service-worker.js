@@ -3,11 +3,16 @@
 self.addEventListener('push', function(event) {
   console.log('Received a push message', event);
 
-  var title = 'My title';
-  var body = 'My Body';
-  var icon = 'logo.png';
-  var tag = 'tag';
 
+  var data = {};
+   if (event.data) {
+     data = event.data;
+   }
+
+   var title = data.title||'My title';
+   var body =  data.body|| 'My Body';
+   var icon =  data.icon|| 'logo.png';
+   var tag =   data.tag||'tag';
   event.waitUntil(
     self.registration.showNotification(title, {
       body: body,
