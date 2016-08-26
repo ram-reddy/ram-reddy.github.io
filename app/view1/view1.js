@@ -23,8 +23,12 @@ $scope.notif.to=sub.endpoint.replace("https://android.googleapis.com/gcm/send/",
           $scope.sends=function(notif){
             var data ={
               "title": notif.title,
-                "body": notif.body,
+                "message": notif.body,
                 data:{
+                  "title": notif.title,
+                    "body": notif.body,
+                  },
+                  notification:{
                   "title": notif.title,
                     "body": notif.body,
                   },
