@@ -17,6 +17,11 @@ $scope.sub=sub;
 $scope.notif.to=sub.endpoint.replace("https://android.googleapis.com/gcm/send/","");
               // send token to server and save it
            console.log(sub)
+           
+           setTimeout(function(){
+             $scope.$apply();
+             
+           },100)
 
           }
 
@@ -28,10 +33,7 @@ $scope.notif.to=sub.endpoint.replace("https://android.googleapis.com/gcm/send/",
                   "title": notif.title,
                     "body": notif.body,
                   },
-                  notification:{
-                  "title": notif.title,
-                    "body": notif.body,
-                  },
+                  
               to:notif.to
             }
 
