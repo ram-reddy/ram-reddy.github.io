@@ -12,7 +12,7 @@ angular.module('myApp.view1', ['ngRoute','angular-gcm'])
 .controller('View1Ctrl', ['$scope','$http',function($scope,$http) {
   $scope.gcmSend = function(sub) {
               // send token to server and save it
-            //  $http.post('your_server_url', {"token" : sub.subscriptionId})
+           console.log(sub)
 
           }
 
